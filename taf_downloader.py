@@ -108,6 +108,8 @@ def get_tafs(icao, date_from_obj, date_to_obj):
         # response error handling:
         except Timeout:
             print('Timeout')
+            ts = datetime.timestamp(datetime.now())
+            proxies_list[0] = {proxy: (ts+7200)}
             continue
         except requests.exceptions.RequestException as e:
             continue
@@ -154,7 +156,7 @@ with open("Output.txt", "a") as text_file:
         print(airport)
         TAF = get_tafs(airport,date_from_obj,date_to_obj)
         airports_tafs[airport] = TAF
-        text_file.write(TAF + '\n')
+        text_file.write(str(TAF) + '\n')
 
 with open('proxies.txt','wb') as proxies_file:
     pickle.dump(proxies_list, proxies_file)
