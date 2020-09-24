@@ -8,6 +8,8 @@ First prompt after launching the applicaiton asks user to insert date from which
 Next prompt asks user to enter TO date. This script uses regexp to check correctness of date format.
 ### ICAO codes of airports
 ICAO codes of airports should be separated by white space.
+### Result
+Downloaded TAFs should be placed in file Output.txt
 ## Proxies
 The sofware uses default proxies list if no proxie file (*proxies.txt*) was found.
 To generate new proxies list use *get_proxies.py* script.
