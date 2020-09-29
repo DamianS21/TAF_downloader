@@ -90,7 +90,7 @@ def get_tafs(icao, date_from_obj, date_to_obj):
 
     count = 0
 
-    while (count < 100):
+    while (count < 30):
         proxies_list = sorted(proxies_list, reverse=False, key=lambda d: list(d.values()))  # sorting by last used proxy
 
         proxy = [p for p in proxies_list[0].keys()][0]
